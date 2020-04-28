@@ -1,8 +1,5 @@
 package com.company.Lexer;
 
-
-
-
 import com.company.Lexer.Service.Token;
 import com.company.Lexer.Service.TokenType;
 import com.company.VI_Exception;
@@ -33,7 +30,7 @@ public class Lexer
 
 
         Pattern pattern = Pattern.compile
-                ("(\\b(?:function|var|if|else|while|for|do|true|false|print|println|Hash|List|Array" +
+                ("(\\b(?:function|var|if|else|while|for|true|false|print|println|Hash|List|Array" +
                         "|setSize|getSize|length|replace|clear" +
                         "|get|getFirst|getLast|add|addForward|addBackward|remove|removeFirst|removeLast" +
                         "|set|put|peek|pop|isEmpty|containsKey|containsValue)\\b)" +

@@ -32,7 +32,9 @@ public class Parser
     }
 
 
-    
+    /**
+     * Processing input text
+     */
     private void processInput() throws VI_Exception
     {
         Token currentToken;
@@ -89,6 +91,9 @@ public class Parser
     }
 
 
+    /**
+     * Processing declaration
+     */
     private void processVariableDeclaration() throws VI_Exception
     {
         Token currentToken;
@@ -112,7 +117,9 @@ public class Parser
     }
 
 
-
+    /**
+     * Processing assignment
+     */
     private void processAssignmentExpression() throws VI_Exception
     {
         Token currentToken;
@@ -140,7 +147,9 @@ public class Parser
 
 
 
-
+    /**
+     * Processing print or println
+     */
     private void processPrintStatement() throws VI_Exception
     {
         Token currentToken;
@@ -176,7 +185,9 @@ public class Parser
 
 
 
-
+    /**
+     * Processing for
+     */
     private void processForStatement() throws VI_Exception
     {
         brackets = new int[]{0, 0};
@@ -222,10 +233,9 @@ public class Parser
             throw new VI_Exception("for params : mismatch in counting brackets");
     }
 
-
-
-
-
+    /**
+     * Processing if
+     */
     private void processIfStatement() throws VI_Exception
     {
         brackets = new int[]{0, 0};
@@ -285,7 +295,9 @@ public class Parser
 
     }
 
-
+    /**
+     * Processing while
+     */
     private void processWhileStatement() throws VI_Exception
     {
         brackets = new int[]{0, 0};
@@ -346,7 +358,9 @@ public class Parser
     }
 
 
-
+    /**
+     * Fill block at if, while or for
+     */
     public int fillBlock(ArrayList<Token> tokens, int position) throws VI_Exception
     {
         if(term instanceof WhileStatement)
@@ -531,6 +545,10 @@ public class Parser
 }
 
 
+
+/**
+ *  Check sequence correctness
+ */
 class CorrectSequence
 {
 

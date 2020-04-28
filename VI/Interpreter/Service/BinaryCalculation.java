@@ -11,7 +11,7 @@ import java.util.Stack;
 
 public class BinaryCalculation
 {
-    private Token result;
+    private final Token result;
 
     public BinaryCalculation(ArrayList<Token> binaryTokens) throws VI_Exception
     {
@@ -23,6 +23,9 @@ public class BinaryCalculation
     public Token getResult() { return result; }
 
 
+    /**
+     *  Calculating result
+     */
     private Token calculateRPN(ArrayList<Token> tokensRPN) throws VI_Exception
     {
         Stack<Token> RPN = new Stack<>();
@@ -184,6 +187,9 @@ public class BinaryCalculation
     }
 
 
+    /**
+     *  Create RPN
+     */
     private ArrayList<Token> createRPN(ArrayList<Token> expressionTokens) throws VI_Exception
     {
         ArrayList<Token> RPN = new ArrayList<>();
@@ -304,6 +310,10 @@ public class BinaryCalculation
     }
 }
 
+
+/**
+ *  Simplification binary expression
+ */
 class SimplificationBinary
 {
     public SimplificationBinary(){}

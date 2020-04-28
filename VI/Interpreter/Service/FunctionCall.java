@@ -27,7 +27,9 @@ public class FunctionCall
 
     public void add(Object token) { functionArguments.add(token); }
 
-
+    /**
+     *  Function processing
+     */
     public Object processFunctionCall(Variable variable) throws VI_Exception
     {
         this.variable = variable;
@@ -47,7 +49,9 @@ public class FunctionCall
         throw new VI_Exception("unknown object type");
     }
 
-
+    /**
+     *  Array processing
+     */
     private Object processArray() throws VI_Exception
     {
         String functionName = functionCall.getContent();
@@ -137,6 +141,9 @@ public class FunctionCall
     }
 
 
+    /**
+     *  Hash processing
+     */
     private Object processVI_HashTable() throws VI_Exception
     {
         String functionName = functionCall.getContent();
@@ -247,6 +254,9 @@ public class FunctionCall
         throw new VI_Exception("Error in calling function from Hash");
     }
 
+    /**
+     *  List processing
+     */
     private Object processVI_DoubleConnectedList() throws VI_Exception
     {
         String functionName = functionCall.getContent();
@@ -400,6 +410,9 @@ public class FunctionCall
 
 
 
+    /**
+     *  Convert token to index
+     */
     private int convert(String doubleValue) throws VI_Exception
     {
         int integer;
@@ -414,6 +427,9 @@ public class FunctionCall
         return integer;
     }
 
+    /**
+     *  Function params processing
+     */
     private void split() throws VI_Exception
     {
         ArrayList<Object> result = new ArrayList<>();

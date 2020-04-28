@@ -1,0 +1,37 @@
+var array ~ Array
+
+array:add(11)
+array:add(9)
+array:add(2)
+array:add(0)
+array:add(67)
+
+var iterator = 0
+while(iterator != array:getSize())
+{
+    println(array:get(iterator))
+    iterator = iterator + 1
+}
+
+for(var i = array:getSize() - 1 , i > 0 , i = i - 1)
+{
+    for(var j = 0 , j < i , j = j + 1)
+    {
+        if(array:get(j) > array:get(j + 1))
+        {
+            var buffer = array:get(j)
+            array:set(array:get(j+1), j)
+            array:set(buffer, j+1)
+        }
+    }
+}
+
+iterator = 0
+while(iterator != array:getSize())
+{
+    println(array:get(iterator))
+    iterator = iterator + 1
+}
+
+
+
